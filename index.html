@@ -808,6 +808,210 @@
       margin: 16px 0 0;
     }
 
+    /* ── Fade-in Animations ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Integration Logos Section ── */
+    .integrations {
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 0;
+    }
+
+    .integrations-inner {
+      text-align: center;
+    }
+
+    .integrations-heading {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .integrations-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .integration-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 18px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .integration-badge:hover {
+      border-color: var(--border-accent);
+      color: var(--text-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .integration-badge .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── Demo Video Placeholder ── */
+    .demo-section {
+      padding: 100px 0;
+    }
+
+    .demo-inner {
+      text-align: center;
+    }
+
+    .demo-inner .section-label {
+      margin-bottom: 20px;
+    }
+
+    .demo-inner .section-title {
+      margin-bottom: 16px;
+    }
+
+    .demo-video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 48px auto 20px;
+      aspect-ratio: 16 / 9;
+      background: #0d1117;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 143, 247, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .demo-video-titlebar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 7px;
+    }
+
+    .demo-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .demo-dot.red    { background: #ff5f57; }
+    .demo-dot.yellow { background: #ffbd2e; }
+    .demo-dot.green  { background: #28ca41; }
+
+    .demo-play-btn {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(79, 143, 247, 0.15);
+      border: 2px solid rgba(79, 143, 247, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .demo-play-btn svg {
+      margin-left: 4px;
+    }
+
+    .demo-coming-soon {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Terminal Snippet ── */
+    .terminal-snippet {
+      max-width: 720px;
+      margin: 56px auto 0;
+      background: #0d1117;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .snippet-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .snippet-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .snippet-dot.red    { background: #ff5f57; }
+    .snippet-dot.yellow { background: #ffbd2e; }
+    .snippet-dot.green  { background: #28ca41; }
+
+    .snippet-title-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-left: 6px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .snippet-body {
+      padding: 24px 28px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      line-height: 1.9;
+    }
+
+    .sn-prompt  { color: #4ade80; }
+    .sn-cmd     { color: #f0f4ff; }
+    .sn-success { color: #4ade80; }
+    .sn-divider { color: var(--text-muted); font-style: italic; }
+    .sn-claude  { color: #7aaeff; }
+    .sn-text    { color: var(--text-secondary); }
+    .sn-blank   { display: block; height: 0.6em; }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
       .solution-grid {
@@ -934,12 +1138,53 @@
           <span>Scroll to explore</span>
           <div class="scroll-arrow"></div>
         </div>
+
+        <!-- Terminal Snippet -->
+        <div class="terminal-snippet" style="text-align: left;">
+          <div class="snippet-titlebar">
+            <div class="snippet-dot red"></div>
+            <div class="snippet-dot yellow"></div>
+            <div class="snippet-dot green"></div>
+            <span class="snippet-title-text">claude-total-memory</span>
+          </div>
+          <div class="snippet-body">
+            <div><span class="sn-prompt">$ </span><span class="sn-cmd">claude</span></div>
+            <div><span class="sn-prompt">&gt; </span><span class="sn-text">Remember that our API uses OAuth2 with PKCE flow</span></div>
+            <div class="sn-blank"></div>
+            <div><span class="sn-success">&#10003; Saved to memory</span></div>
+            <div class="sn-blank"></div>
+            <div><span class="sn-divider">--- Next session ---</span></div>
+            <div class="sn-blank"></div>
+            <div><span class="sn-prompt">&gt; </span><span class="sn-text">How does our API handle authentication?</span></div>
+            <div class="sn-blank"></div>
+            <div><span class="sn-claude">Claude: </span><span class="sn-text">Based on your previous sessions, your API uses OAuth2 with</span></div>
+            <div><span class="sn-text">PKCE flow. This was established on March 3rd and confirmed in your</span></div>
+            <div><span class="sn-text">session on March 10th when you updated the token refresh logic.</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Integrations -->
+  <section class="integrations fade-in">
+    <div class="container">
+      <div class="integrations-inner">
+        <p class="integrations-heading">Works With</p>
+        <div class="integrations-row">
+          <span class="integration-badge"><span class="badge-dot"></span>Claude Code</span>
+          <span class="integration-badge"><span class="badge-dot"></span>MCP Protocol</span>
+          <span class="integration-badge"><span class="badge-dot"></span>Python</span>
+          <span class="integration-badge"><span class="badge-dot"></span>Neo4j</span>
+          <span class="integration-badge"><span class="badge-dot"></span>Docker</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Problem -->
-  <section class="section problem" id="problem">
+  <section class="section problem fade-in" id="problem">
     <div class="container">
       <div class="problem-inner">
         <div>
@@ -996,7 +1241,7 @@
   </section>
 
   <!-- Solution -->
-  <section class="section" id="solution">
+  <section class="section fade-in" id="solution">
     <div class="container">
       <span class="section-label">The Solution</span>
       <h2 class="section-title">Persistent Memory, Built for Production</h2>
@@ -1009,27 +1254,27 @@
           <div class="feature-title">RAG-Powered Search</div>
           <p class="feature-desc">Semantic search across all past sessions with sub-200ms retrieval. Claude finds the exact context it needs, when it needs it.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" style="transition-delay: 0.1s;">
           <div class="feature-icon">🕸</div>
           <div class="feature-title">Knowledge Graph</div>
           <p class="feature-desc">Entities, relationships, and decisions tracked across 200+ sessions. Over 5,000 entities and 6,000 relationship edges. Fully indexed.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" style="transition-delay: 0.2s;">
           <div class="feature-icon">⚙</div>
           <div class="feature-title">Automated Session Management</div>
           <p class="feature-desc">One command closes a session, indexes all content, updates the knowledge graph, and commits everything. Zero manual steps.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" style="transition-delay: 0.1s;">
           <div class="feature-icon">🔌</div>
           <div class="feature-title">MCP Integration</div>
           <p class="feature-desc">Native Model Context Protocol server. Memory tools are available directly inside Claude Code. No context-switching required.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" style="transition-delay: 0.2s;">
           <div class="feature-icon">🖥</div>
           <div class="feature-title">Multi-Environment Support</div>
           <p class="feature-desc">Works on Linux, macOS, and WSL2. Fully portable with one-command setup that configures everything automatically.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" style="transition-delay: 0.3s;">
           <div class="feature-icon">🏢</div>
           <div class="feature-title">Enterprise Ready</div>
           <p class="feature-desc">Per-project memory isolation, team deployment support, and deterministic workflows designed for production engineering environments.</p>
@@ -1039,7 +1284,7 @@
   </section>
 
   <!-- How It Works -->
-  <section class="section how-it-works" id="how-it-works">
+  <section class="section how-it-works fade-in" id="how-it-works">
     <div class="container">
       <div class="how-header">
         <span class="section-label">How It Works</span>
@@ -1071,8 +1316,32 @@
     </div>
   </section>
 
+  <!-- Demo -->
+  <section class="demo-section fade-in">
+    <div class="container">
+      <div class="demo-inner">
+        <span class="section-label">See It In Action</span>
+        <h2 class="section-title">See It In Action</h2>
+        <div class="demo-video-wrap">
+          <div class="demo-video-titlebar">
+            <div class="demo-dot red"></div>
+            <div class="demo-dot yellow"></div>
+            <div class="demo-dot green"></div>
+          </div>
+          <div class="demo-play-btn" aria-label="Demo video coming soon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="rgba(79,143,247,0.6)" stroke-width="1.5"/>
+              <path d="M10 8.5L16.5 12L10 15.5V8.5Z" fill="#7aaeff"/>
+            </svg>
+          </div>
+          <p class="demo-coming-soon">Demo video coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Stats -->
-  <section class="section stats" id="stats">
+  <section class="section stats fade-in" id="stats">
     <div class="stats-bg"></div>
     <div class="container">
       <div class="stats-inner">
@@ -1108,7 +1377,7 @@
   </section>
 
   <!-- About -->
-  <section class="section about" id="about">
+  <section class="section about fade-in" id="about">
     <div class="container">
       <div class="about-inner">
         <div class="about-text">
@@ -1182,6 +1451,27 @@
         nav.style.boxShadow = 'none';
       }
     }, { passive: true });
+
+    // Fade-in on scroll using IntersectionObserver
+    (function() {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
   </script>
 
 </body>
