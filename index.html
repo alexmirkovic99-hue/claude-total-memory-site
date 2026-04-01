@@ -624,7 +624,7 @@
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       margin-top: 56px;
     }
@@ -730,16 +730,6 @@
     }
 
     .about-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--purple));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
       flex-shrink: 0;
     }
 
@@ -900,17 +890,11 @@
       width: 100%;
       max-width: 800px;
       margin: 48px auto 20px;
-      aspect-ratio: 16 / 9;
       background: #0d1117;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
       overflow: hidden;
       box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 143, 247, 0.08);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
     }
 
     .demo-video-titlebar {
@@ -958,6 +942,263 @@
       font-size: 0.85rem;
       color: var(--text-muted);
       letter-spacing: 0.04em;
+    }
+
+    /* ── Demo Video Player ── */
+    .demo-video-player {
+      width: 100%;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    /* ── About Avatar Photo ── */
+    .about-avatar-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--accent-dim);
+      box-shadow: 0 8px 32px rgba(79, 143, 247, 0.2);
+    }
+
+    /* ── Architecture Evolution Section ── */
+    .arch-section {
+      background: var(--bg-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arch-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .arch-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 840px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .arch-timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--purple));
+      opacity: 0.4;
+    }
+
+    .arch-phase {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      padding: 0 0 48px 0;
+      position: relative;
+    }
+
+    .arch-phase:last-child {
+      padding-bottom: 0;
+    }
+
+    .arch-phase-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-dim), var(--purple-dim));
+      border: 2px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .arch-phase-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      flex: 1;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .arch-phase-content:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+
+    .arch-phase-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .arch-phase-date {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .arch-phase-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .arch-phase-list li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .arch-phase-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    /* ── System Components Section ── */
+    .components-section {
+      padding: 100px 0;
+    }
+
+    .components-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .component-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+
+    .component-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .component-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .component-role {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── Agent Architecture Section ── */
+    .agents-section {
+      background: var(--bg-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .agents-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .agent-category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .agent-category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--purple) 100%);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .agent-category-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .agent-category-card:hover::before {
+      opacity: 1;
+    }
+
+    .agent-category-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-dim);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+    }
+
+    .agent-category-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .agent-category-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
     }
 
     /* ── Terminal Snippet ── */
@@ -1019,7 +1260,15 @@
       }
 
       .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .components-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .agents-grid {
+        grid-template-columns: 1fr;
       }
 
       .problem-inner,
@@ -1053,6 +1302,10 @@
 
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .components-grid {
+        grid-template-columns: 1fr;
       }
 
       .hero-actions {
@@ -1297,20 +1550,165 @@
         <div class="step">
           <div class="step-number">1</div>
           <h3 class="step-title">Install</h3>
-          <p class="step-desc">One-command setup configures RAG indexing, the knowledge graph, and MCP server automatically. Works on any supported platform.</p>
+          <p class="step-desc">One command sets up everything. Claude guides you through environment detection and tier selection. RAG indexing, knowledge graph, and MCP server configured automatically.</p>
           <span class="step-code">./setup.sh</span>
         </div>
         <div class="step">
           <div class="step-number">2</div>
           <h3 class="step-title">Work</h3>
-          <p class="step-desc">Use Claude Code exactly as you do today. Memory captures context, decisions, and code patterns in the background. Nothing changes in your workflow.</p>
+          <p class="step-desc">Use Claude Code normally. Memory captures context, decisions, and code patterns in the background. Nothing changes in your workflow.</p>
           <span class="step-code">claude "continue where we left off"</span>
         </div>
         <div class="step">
           <div class="step-number">3</div>
           <h3 class="step-title">Remember</h3>
-          <p class="step-desc">Next session, Claude has full access to past decisions, architectural context, debugging history, and code patterns. Instantly. Every time.</p>
+          <p class="step-desc">Next session, Claude searches 200+ past sessions in under 200ms. Every decision, every pattern, instantly available. Full architectural context from day one.</p>
           <span class="step-code">/close-session</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Evolution -->
+  <section class="section arch-section fade-in" id="architecture">
+    <div class="container">
+      <div class="arch-header">
+        <span class="section-label">Engineering Depth</span>
+        <h2 class="section-title">Built Through Production, Not Theory</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          18 architectural decisions across 4 phases of development. Every design choice earned through real-world usage.
+        </p>
+      </div>
+      <div class="arch-timeline">
+        <div class="arch-phase">
+          <div class="arch-phase-dot">1</div>
+          <div class="arch-phase-content">
+            <div class="arch-phase-title">Phase 1: Monolith</div>
+            <div class="arch-phase-date">Pre-December 2025</div>
+            <ul class="arch-phase-list">
+              <li>Single agent, 37-step pipeline</li>
+              <li>One Haiku agent handling everything sequentially</li>
+            </ul>
+          </div>
+        </div>
+        <div class="arch-phase">
+          <div class="arch-phase-dot">2</div>
+          <div class="arch-phase-content">
+            <div class="arch-phase-title">Phase 2: Decomposition</div>
+            <div class="arch-phase-date">December 2025 to January 2026</div>
+            <ul class="arch-phase-list">
+              <li>Individual session files replace monolithic logs</li>
+              <li>7-agent orchestrated design introduced</li>
+              <li>Delegated analysis pattern v2.0</li>
+            </ul>
+          </div>
+        </div>
+        <div class="arch-phase">
+          <div class="arch-phase-dot">3</div>
+          <div class="arch-phase-content">
+            <div class="arch-phase-title">Phase 3: Simplification</div>
+            <div class="arch-phase-date">February 2026</div>
+            <ul class="arch-phase-list">
+              <li>Two parallel Haiku agents (simpler topology)</li>
+              <li>Shared title and summary extractor</li>
+              <li>Python rewrite v3.7.0 with deterministic workflow</li>
+            </ul>
+          </div>
+        </div>
+        <div class="arch-phase">
+          <div class="arch-phase-dot">4</div>
+          <div class="arch-phase-content">
+            <div class="arch-phase-title">Phase 4: Production Hardening</div>
+            <div class="arch-phase-date">March 2026</div>
+            <ul class="arch-phase-list">
+              <li>Graphiti agent self-sufficient</li>
+              <li>Compact-proof design for crash recovery</li>
+              <li>v3.8.0 zero-bash main: spawns 2 agents, runs zero bash commands</li>
+              <li>Benchmark: 99.3/100 quality score</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Components -->
+  <section class="section components-section fade-in" id="components">
+    <div class="container">
+      <div class="components-header">
+        <span class="section-label">Infrastructure</span>
+        <h2 class="section-title">What's Under the Hood</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          A complete infrastructure stack, purpose-built for the Claude ecosystem.
+        </p>
+      </div>
+      <div class="components-grid">
+        <div class="component-card">
+          <div class="component-name">Claude Haiku / Haiku 4.5</div>
+          <div class="component-role">Primary execution model</div>
+        </div>
+        <div class="component-card">
+          <div class="component-name">Claude Sonnet 4.5</div>
+          <div class="component-role">Multi-agent coordination</div>
+        </div>
+        <div class="component-card">
+          <div class="component-name">BM25 + Vector Search</div>
+          <div class="component-role">Hybrid search engine</div>
+        </div>
+        <div class="component-card">
+          <div class="component-name">Python 3</div>
+          <div class="component-role">Implementation language</div>
+        </div>
+        <div class="component-card">
+          <div class="component-name">Neo4j</div>
+          <div class="component-role">Knowledge graph storage</div>
+        </div>
+        <div class="component-card">
+          <div class="component-name">Graphiti</div>
+          <div class="component-role">Entity and relationship extraction</div>
+        </div>
+        <div class="component-card">
+          <div class="component-name">MCP Protocol</div>
+          <div class="component-role">Native Claude Code integration</div>
+        </div>
+        <div class="component-card">
+          <div class="component-name">Docker</div>
+          <div class="component-role">Infrastructure dependencies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent Architecture -->
+  <section class="section agents-section fade-in" id="agents">
+    <div class="container">
+      <div class="agents-header">
+        <span class="section-label">Included Agents</span>
+        <h2 class="section-title">Specialized Agents, Built In</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Claude Total Memory ships with specialized agents that handle context retrieval, session management, code quality, and security.
+        </p>
+      </div>
+      <div class="agents-grid">
+        <div class="agent-category-card">
+          <div class="agent-category-icon">🔍</div>
+          <div class="agent-category-name">Context Researcher</div>
+          <p class="agent-category-desc">Searches across memory, sessions, and the knowledge graph to gather relevant context. Returns verified summaries with source citations using a 4-phase anti-hallucination pipeline.</p>
+        </div>
+        <div class="agent-category-card">
+          <div class="agent-category-icon">⚡</div>
+          <div class="agent-category-name">Session Closer</div>
+          <p class="agent-category-desc">Two Haiku agents orchestrate the 11-step session closure pipeline: markdown conversion, AI summary, RAG indexing, knowledge graph extraction, quality checks, and git commit.</p>
+        </div>
+        <div class="agent-category-card">
+          <div class="agent-category-icon">✓</div>
+          <div class="agent-category-name">Quality and Review</div>
+          <p class="agent-category-desc">Meta-reviewer validates work quality. Synergy-checker ensures cross-file consistency. Fixer closes identified gaps. All work together in an automated review cycle.</p>
+        </div>
+        <div class="agent-category-card">
+          <div class="agent-category-icon">🛡</div>
+          <div class="agent-category-name">Analysis and Security</div>
+          <p class="agent-category-desc">Code analyzer maps dependencies and complexity. Security reviewer performs OWASP Top 10 analysis and secrets scanning. Debugging specialist handles root cause analysis.</p>
         </div>
       </div>
     </div>
@@ -1323,18 +1721,10 @@
         <span class="section-label">See It In Action</span>
         <h2 class="section-title">See It In Action</h2>
         <div class="demo-video-wrap">
-          <div class="demo-video-titlebar">
-            <div class="demo-dot red"></div>
-            <div class="demo-dot yellow"></div>
-            <div class="demo-dot green"></div>
-          </div>
-          <div class="demo-play-btn" aria-label="Demo video coming soon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="11" stroke="rgba(79,143,247,0.6)" stroke-width="1.5"/>
-              <path d="M10 8.5L16.5 12L10 15.5V8.5Z" fill="#7aaeff"/>
-            </svg>
-          </div>
-          <p class="demo-coming-soon">Demo video coming soon</p>
+          <video class="demo-video-player" controls preload="metadata" poster="">
+            <source src="demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
@@ -1353,7 +1743,7 @@
         <div class="stats-grid">
           <div class="stat-card">
             <span class="stat-value">200+</span>
-            <span class="stat-label">Sessions Indexed</span>
+            <span class="stat-label">Session Files Indexed</span>
           </div>
           <div class="stat-card">
             <span class="stat-value">5,000+</span>
@@ -1364,12 +1754,16 @@
             <span class="stat-label">Relationship Edges</span>
           </div>
           <div class="stat-card">
-            <span class="stat-value">99.3%</span>
-            <span class="stat-label">Session Mgmt Score</span>
+            <span class="stat-value">99.3/100</span>
+            <span class="stat-label">Quality Score</span>
           </div>
           <div class="stat-card">
             <span class="stat-value">&lt;200ms</span>
             <span class="stat-label">Search Retrieval</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">3</span>
+            <span class="stat-label">Deployment Tiers</span>
           </div>
         </div>
       </div>
@@ -1400,7 +1794,7 @@
         </div>
         <div class="about-card">
           <div class="about-card-header">
-            <div class="about-avatar">A</div>
+            <img src="aleksa.jpg" alt="Aleksa Mirkovic" class="about-avatar-img" />
             <div>
               <div class="about-name">Aleksa Mirkovic</div>
               <div class="about-title-role">Founder, Business Wings LLC</div>
